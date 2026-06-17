@@ -16,11 +16,16 @@ const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors: { origin: '*', methods: ['GET', 'POST'] }
+  cors: {
+    origin: ['https://queue-cure-gamma.vercel.app', 'http://localhost:5173'],
+    methods: ['GET', 'POST']
+  },
+  transports: ['polling', 'websocket']
 });
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: ['https://queue-cure-gamma.vercel.app', 'http://localhost:5173']
+}));app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({ status: 'Queue Cure server is running' });
