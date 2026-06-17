@@ -1,0 +1,148 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f0f4f8;
+  color: #1a202c;
+  min-height: 100vh;
+}
+
+.app-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+.nav {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.nav-brand { font-size: 1.1rem; font-weight: 700; color: #2b6cb0; }
+
+.nav-links { display: flex; gap: 8px; }
+
+.nav-btn {
+  padding: 6px 16px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  background: #fff;
+  color: #4a5568;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.nav-btn:hover { background: #ebf4ff; border-color: #90cdf4; color: #2b6cb0; }
+.nav-btn.active { background: #2b6cb0; border-color: #2b6cb0; color: #fff; }
+
+.main-content { flex: 1; padding: 24px; max-width: 960px; margin: 0 auto; width: 100%; }
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.card h2 { font-size: 1rem; font-weight: 600; color: #2d3748; margin-bottom: 16px; }
+
+/* Form elements */
+.input-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+input[type="text"], input[type="number"] {
+  flex: 1;
+  min-width: 160px;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus { border-color: #4299e1; box-shadow: 0 0 0 3px rgba(66,153,225,0.15); }
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.btn-primary { background: #2b6cb0; color: #fff; }
+.btn-primary:hover { background: #2c5282; }
+.btn-primary:disabled { background: #a0aec0; cursor: not-allowed; }
+
+.btn-success { background: #276749; color: #fff; }
+.btn-success:hover { background: #22543d; }
+.btn-success:disabled { background: #a0aec0; cursor: not-allowed; }
+
+.btn-danger { background: #c53030; color: #fff; }
+.btn-danger:hover { background: #9b2c2c; }
+
+.btn-outline {
+  background: #fff;
+  color: #2b6cb0;
+  border: 1px solid #2b6cb0;
+}
+.btn-outline:hover { background: #ebf4ff; }
+
+/* Status badge */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.badge-green { background: #c6f6d5; color: #276749; }
+.badge-blue  { background: #bee3f8; color: #2c5282; }
+.badge-gray  { background: #e2e8f0; color: #4a5568; }
+.badge-red   { background: #fed7d7; color: #c53030; }
+
+/* Error / success messages */
+.msg { padding: 10px 14px; border-radius: 8px; font-size: 0.875rem; margin-top: 10px; }
+.msg-error   { background: #fff5f5; color: #c53030; border: 1px solid #fed7d7; }
+.msg-success { background: #f0fff4; color: #276749; border: 1px solid #c6f6d5; }
+.msg-info    { background: #ebf8ff; color: #2c5282; border: 1px solid #bee3f8; }
+
+/* Token display */
+.token-big {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #2b6cb0;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.token-label { font-size: 0.78rem; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+/* Queue table */
+.queue-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.queue-table th { text-align: left; padding: 8px 12px; color: #718096; font-weight: 600; border-bottom: 2px solid #e2e8f0; }
+.queue-table td { padding: 10px 12px; border-bottom: 1px solid #f7fafc; }
+.queue-table tr:last-child td { border-bottom: none; }
+.queue-table tr:hover td { background: #f7fafc; }
+
+/* Stats row */
+.stats-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.stat-box { flex: 1; min-width: 120px; background: #ebf4ff; border-radius: 10px; padding: 16px; text-align: center; }
+.stat-box .stat-num { font-size: 2rem; font-weight: 800; color: #2b6cb0; }
+.stat-box .stat-lbl { font-size: 0.75rem; color: #4a5568; margin-top: 4px; }
+
+/* Connection dot */
+.conn-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.conn-dot.online  { background: #48bb78; }
+.conn-dot.offline { background: #fc8181; }

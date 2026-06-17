@@ -1,0 +1,11 @@
+# Server
+server/node_modules
+server/store.json
+
+# Client
+client/node_modules
+client/dist
+
+# General
+.env
+.DS_Store
